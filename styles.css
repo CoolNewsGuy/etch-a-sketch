@@ -37,4 +37,5 @@ body {
     background: var(--control-panel-color);
     width: var(--control-panel-width);
     min-height: var(--control-panel-height);
+    color: var(--text-color);
 }
