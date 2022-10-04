@@ -1,10 +1,19 @@
 :root {
     --background: #02042d;
     --control-panel: #1b1111;
+    --control-panel-height: 100vh;
+    --control-panel-width: 432px;
+    --how-to-play-text-size: 32px;
+    --text-color: #fff;
     --btn-color: #fee715;
-    --btn-text-color: 101820;
     --btn-shadow: 0 0 20px 6px #d6c316;
     --btn-hover-text-color: #fee715;
+    --btn-width: 272px;
+    --btn-height: 76px;
+    --btn-text-color: 101820;
+    --btn-text-size: 50px;
+    --sketch-container-width: 1000px;
+    --sketch-container-height: 1000px;
 }
 
 * {
