@@ -1,3 +1,16 @@
+:root {
+    --background: #02042d;
+    --control-panel: #1b1111;
+    --btn-color: #fee715;
+    --btn-text-color: 101820;
+    --btn-shadow: 0 0 20px 6px #d6c316;
+    --btn-hover-text-color: #fee715;
+}
+
 * {
     box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
 }
