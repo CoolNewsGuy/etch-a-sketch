@@ -16,7 +16,7 @@
     --btn-text-color: #101820;
     --btn-text-size: 50px;
     --btn-radius: 6px;
-    --sketch-container-width: 1000px;
+    --sketch-container-width: 900px;
     --sketch-container-height: 900px;
 }
 
@@ -87,4 +87,6 @@ body {
     min-height: var(--sketch-container-height);
     min-width: var(--sketch-container-width);
     background: grey;
+    /* display: flex; */
+    /* flex-direction: column; */
 }
