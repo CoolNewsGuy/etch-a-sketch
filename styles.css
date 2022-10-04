@@ -5,6 +5,7 @@
     --control-panel-width: 432px;
     --big-container-height: 100vh;
     --big-container-width: calc(100vw - 432px);
+    --how-to-play-title-size: 50px;
     --how-to-play-text-size: 32px;
     --text-color: #fff;
     --btn-color: #fee715;
@@ -38,4 +39,18 @@ body {
     width: var(--control-panel-width);
     min-height: var(--control-panel-height);
     color: var(--text-color);
+}
+
+.menu h1 {
+    margin-left: 54px;
+    margin-right: 73px;
+    font-size: var(--how-to-play-title-size);
+    font-weight: 400;
+}
+
+.menu p {
+    font-size: var(--how-to-play-text-size);
+    margin-top: 110px;
+    line-height: 1.4;
+    margin-left: 0.5em;
 }
