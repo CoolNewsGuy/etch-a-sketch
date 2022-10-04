@@ -17,7 +17,7 @@
     --btn-text-size: 50px;
     --btn-radius: 6px;
     --sketch-container-width: 1000px;
-    --sketch-container-height: 1000px;
+    --sketch-container-height: 900px;
 }
 
 * {
@@ -27,12 +27,6 @@
 
 body {
     display: flex;
-}
-
-.big-container {
-    background-color: var(--background);
-    height: var(--big-container-height);
-    width: var(--big-container-width);
 }
 
 .menu {
@@ -79,4 +73,18 @@ body {
 
 .menu #got-it-btn {
     margin-top: 70px;
+}
+
+.big-container {
+    background-color: var(--background);
+    height: var(--big-container-height);
+    width: var(--big-container-width);
+    display: grid;
+    place-content: center;
+}
+
+.big-container .sketch-container {
+    min-height: var(--sketch-container-height);
+    min-width: var(--sketch-container-width);
+    background: grey;
 }
