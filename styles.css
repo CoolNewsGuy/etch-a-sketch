@@ -1,8 +1,10 @@
 :root {
     --background: #02042d;
-    --control-panel: #1b1111;
+    --control-panel-color: #1b1111;
     --control-panel-height: 100vh;
     --control-panel-width: 432px;
+    --big-container-height: 100vh;
+    --big-container-width: calc(100vw - 432px);
     --how-to-play-text-size: 32px;
     --text-color: #fff;
     --btn-color: #fee715;
@@ -22,5 +24,17 @@
 }
 
 body {
+    display: flex;
+}
+
+.big-container {
     background-color: var(--background);
+    height: var(--big-container-height);
+    width: var(--big-container-width);
+}
+
+.menu {
+    background: var(--control-panel-color);
+    width: var(--control-panel-width);
+    min-height: var(--control-panel-height);
 }
