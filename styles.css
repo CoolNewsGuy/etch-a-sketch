@@ -13,8 +13,9 @@
     --btn-hover-text-color: #fee715;
     --btn-width: 272px;
     --btn-height: 76px;
-    --btn-text-color: 101820;
+    --btn-text-color: #101820;
     --btn-text-size: 50px;
+    --btn-radius: 6px;
     --sketch-container-width: 1000px;
     --sketch-container-height: 1000px;
 }
@@ -53,4 +54,29 @@ body {
     margin-top: 110px;
     line-height: 1.4;
     margin-left: 0.5em;
+}
+
+.menu button {
+    font-size: var(--btn-text-size);
+    width: var(--btn-width);
+    min-height: var(--btn-height);
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    box-shadow: var(--btn-shadow);
+    border-radius: var(--btn-radius);
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s;
+}
+
+.menu button:hover {
+    color: var(--btn-hover-text-color);
+    background-color: var(--btn-text-color);
+    cursor: pointer;
+}
+
+.menu #got-it-btn {
+    margin-top: 70px;
 }
