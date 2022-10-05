@@ -19,7 +19,7 @@
     --sketch-container-width: 900px;
     --sketch-container-height: 900px;
     --sketch-container-background: #101820;
-    --sketch-container-shadow: 0 0 20px 6px #d6c316;
+    --sketch-container-shadow: 0 0 5px 2px #d6c316;
 }
 
 * {
