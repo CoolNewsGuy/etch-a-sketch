@@ -93,3 +93,7 @@ body {
     width: var(--sketch-container-width);
     background: grey;
 }
+
+.big-container .sketch-container .transparent-squares {
+    background: transparent !important;
+}
