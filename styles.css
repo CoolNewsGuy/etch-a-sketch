@@ -18,6 +18,8 @@
     --btn-radius: 6px;
     --sketch-container-width: 900px;
     --sketch-container-height: 900px;
+    --sketch-container-background: #101820;
+    --sketch-container-shadow: 0 0 20px 6px #d6c316;
 }
 
 * {
@@ -91,7 +93,8 @@ body {
 .big-container .sketch-container {
     min-height: var(--sketch-container-height);
     width: var(--sketch-container-width);
-    background: grey;
+    background: var(--sketch-container-background);
+    box-shadow: var(--sketch-container-shadow);
 }
 
 .big-container .sketch-container .transparent-squares {
