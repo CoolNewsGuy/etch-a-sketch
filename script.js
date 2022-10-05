@@ -1,12 +1,13 @@
 let sketchContainer = document.getElementsByClassName("sketch-container")[0];
 let resetButton = document.getElementById("reset-btn");
+let grid = 100;
 
 // +functions
 function createLineContainers() {
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < grid; i++) {
         let lineContainer = document.createElement("div");
         lineContainer.style.maxHeight =
-            sketchContainer.clientHeight / 16 + "px";
+            sketchContainer.clientHeight / grid + "px";
         lineContainer.style.width = getComputedStyle(sketchContainer).width;
         lineContainer.classList.add("line-container");
         sketchContainer.appendChild(lineContainer);
@@ -18,14 +19,14 @@ function createSquares() {
     orangeSquare.classList.add("square");
     orangeSquare.style.display = "inline-block";
     orangeSquare.style.background = "#fee715";
-    orangeSquare.style.width = sketchContainer.clientWidth / 16 + "px";
-    orangeSquare.style.height = sketchContainer.clientHeight / 16 + "px";
+    orangeSquare.style.width = sketchContainer.clientWidth / grid + "px";
+    orangeSquare.style.height = sketchContainer.clientHeight / grid + "px";
 
     return orangeSquare;
 }
 
 function drawSquares(container) {
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < grid; i++) {
         container.append(createSquares());
     }
 }
