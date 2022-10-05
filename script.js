@@ -18,6 +18,7 @@ function createOrangeSquares() {
     orangeSquare.style.background = "#fee715";
     orangeSquare.style.width = sketchContainer.clientWidth / 16 + "px";
     orangeSquare.style.height = sketchContainer.clientHeight / 16 + "px";
+
     return orangeSquare;
 }
 
@@ -27,6 +28,7 @@ function createBlackSquares() {
     blackSquare.style.background = "#101820";
     blackSquare.style.width = sketchContainer.clientWidth / 16 + "px";
     blackSquare.style.height = sketchContainer.clientHeight / 16 + "px";
+
     return blackSquare;
 }
 

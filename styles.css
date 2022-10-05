@@ -75,9 +75,13 @@ body {
     margin-top: 70px;
 }
 
+.menu #reset-btn {
+    margin-top: 3.8em;
+}
+
 .big-container {
     background-color: var(--background);
-    height: var(--big-container-height);
+    min-height: var(--big-container-height);
     width: var(--big-container-width);
     display: grid;
     place-content: center;
