@@ -78,9 +78,10 @@ body {
     margin-top: 70px;
 }
 
-/* .menu #reset-btn {
+.menu #reset-btn {
     margin-top: 2.8em;
-} */
+    display: none;
+}
 
 .big-container {
     background-color: var(--background);
