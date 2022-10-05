@@ -13,9 +13,9 @@ function createLineContainers() {
     }
 }
 
-function createOrangeSquares() {
+function createSquares() {
     let orangeSquare = document.createElement("div");
-    orangeSquare.classList.add("orange-square");
+    orangeSquare.classList.add("square");
     orangeSquare.style.display = "inline-block";
     orangeSquare.style.background = "#fee715";
     orangeSquare.style.width = sketchContainer.clientWidth / 16 + "px";
@@ -24,26 +24,9 @@ function createOrangeSquares() {
     return orangeSquare;
 }
 
-function createBlackSquares() {
-    let blackSquare = document.createElement("div");
-    blackSquare.classList.add("black-square");
-    blackSquare.style.display = "inline-block";
-    blackSquare.style.background = "#101820";
-    blackSquare.style.width = sketchContainer.clientWidth / 16 + "px";
-    blackSquare.style.height = sketchContainer.clientHeight / 16 + "px";
-
-    return blackSquare;
-}
-
 function drawSquares(container) {
-    if (Array.from(lineContainers).indexOf(container) % 2 === 0) {
-        for (let i = 0; i < 8; i++) {
-            container.append(createOrangeSquares(), createBlackSquares());
-        }
-    } else if (Array.from(lineContainers).indexOf(container) % 2 !== 0) {
-        for (let i = 0; i < 8; i++) {
-            container.append(createBlackSquares(), createOrangeSquares());
-        }
+    for (let i = 0; i < 16; i++) {
+        container.append(createSquares());
     }
 }
 
@@ -52,12 +35,7 @@ function colorizeSquares() {
 }
 
 function reset() {
-    blackSquares.forEach((square) =>
-        square.classList.add("transparent-squares")
-    );
-    orangeSquares.forEach((square) =>
-        square.classList.add("transparent-squares")
-    );
+    squares.forEach((square) => square.classList.add("transparent-squares"));
 }
 
 // +other things
@@ -65,13 +43,10 @@ createLineContainers();
 let lineContainers = document.querySelectorAll(".line-container");
 lineContainers.forEach(drawSquares);
 
-let blackSquares = document.querySelectorAll(".black-square");
-let orangeSquares = document.querySelectorAll(".orange-square");
-blackSquares.forEach((square) => square.classList.add("transparent-squares"));
-orangeSquares.forEach((square) => square.classList.add("transparent-squares"));
+let squares = document.querySelectorAll(".square");
+squares.forEach((square) => square.classList.add("transparent-squares"));
 
-blackSquares.forEach((square) =>
+squares.forEach((square) =>
     square.addEventListener("mouseover", colorizeSquares)
 );
-
 resetButton.addEventListener("click", reset);
