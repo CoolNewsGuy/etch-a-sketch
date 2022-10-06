@@ -105,6 +105,12 @@ body {
     margin-right: 0.5em;
 }
 
+.menu-2 h2 {
+    font-size: var(--control-panel-subtitles-size);
+    font-weight: 400;
+    margin-left: 1rem;
+}
+
 .big-container {
     background-color: var(--background);
     min-height: var(--big-container-height);
