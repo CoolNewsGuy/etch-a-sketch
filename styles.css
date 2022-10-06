@@ -3,6 +3,14 @@
     --control-panel-color: #1b1111;
     --control-panel-height: 100vh;
     --control-panel-width: 432px;
+    --control-panel-title-size: 50px;
+    --control-panel-subtitles-size: 40px;
+    --control-panel-subtexts-size: 30px;
+    --control-panel-shortcuts-subtext-size: 25px;
+    --control-panel-grid-slider-height: 20px;
+    --control-panel-grid-slider-width: 400px;
+    --control-panel-grid-slider-circle-height: 37px;
+    --control-panel-grid-slider-circle-width: 37px;
     --big-container-height: 100vh;
     --big-container-width: calc(100vw - 432px);
     --how-to-play-title-size: 50px;
