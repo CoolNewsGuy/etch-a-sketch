@@ -9,8 +9,11 @@
     --control-panel-shortcuts-subtext-size: 25px;
     --control-panel-grid-slider-height: 20px;
     --control-panel-grid-slider-width: 400px;
+    --control-panel-grid-slider-color: #37495a;
     --control-panel-grid-slider-circle-height: 37px;
     --control-panel-grid-slider-circle-width: 37px;
+    --control-panel-grid-text: 20px;
+    --control-panel-circles-color: #0c1f3d;
     --big-container-height: 100vh;
     --big-container-width: calc(100vw - 432px);
     --how-to-play-title-size: 50px;
