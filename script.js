@@ -18,14 +18,14 @@ function createLineContainers() {
 }
 
 function createSquares() {
-    let orangeSquare = document.createElement("div");
-    orangeSquare.classList.add("square");
-    orangeSquare.style.display = "inline-block";
-    orangeSquare.style.background = "#fee715";
-    orangeSquare.style.width = sketchContainer.clientWidth / grid + "px";
-    orangeSquare.style.height = sketchContainer.clientHeight / grid + "px";
+    let square = document.createElement("div");
+    square.classList.add("square");
+    square.style.display = "inline-block";
+    square.style.background = "#fee715";
+    square.style.width = sketchContainer.clientWidth / grid + "px";
+    square.style.height = sketchContainer.clientHeight / grid + "px";
 
-    return orangeSquare;
+    return square;
 }
 
 function drawSquares(container) {
