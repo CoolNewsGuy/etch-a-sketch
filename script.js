@@ -1,5 +1,8 @@
 let sketchContainer = document.getElementsByClassName("sketch-container")[0];
 let resetButton = document.getElementById("reset-btn");
+let gotItButton = document.getElementById("got-it-btn");
+let menu1 = document.getElementsByClassName("menu-1")[0];
+let menu2 = document.getElementsByClassName("menu-2")[0];
 let grid = 100;
 
 // +functions
@@ -91,3 +94,6 @@ squares.forEach((square) => square.classList.add("transparent-squares"));
 
 resetButton.addEventListener("click", reset);
 document.addEventListener("keypress", addShortcuts);
+gotItButton.addEventListener("click", () => {
+    menu1.classList.add("fade-out");
+});
