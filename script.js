@@ -84,6 +84,12 @@ function addShortcuts(e) {
     }
 }
 
+function hideMenu1() {
+    menu1.classList.add("fade-out");
+    gotItButton.setAttribute("class", "clicked-btn");
+    setInterval(() => (menu1.style.display = "none"), 1500);
+}
+
 // +other things
 createLineContainers();
 let lineContainers = document.querySelectorAll(".line-container");
@@ -94,6 +100,4 @@ squares.forEach((square) => square.classList.add("transparent-squares"));
 
 resetButton.addEventListener("click", reset);
 document.addEventListener("keypress", addShortcuts);
-gotItButton.addEventListener("click", () => {
-    menu1.classList.add("fade-out");
-});
+gotItButton.addEventListener("click", hideMenu1);

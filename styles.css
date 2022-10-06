@@ -74,6 +74,12 @@ body {
     cursor: pointer;
 }
 
+.clicked-btn#got-it-btn {
+    background-color: var(--btn-hover-text-color);
+    color: var(--btn-text-color);
+    cursor: default;
+}
+
 .menu #got-it-btn {
     margin-top: 70px;
 }
@@ -104,7 +110,8 @@ body {
 
 .fade-out {
     opacity: 0;
-    animation: fadeOut 1.5s;
+    animation: fadeOut 2s;
+    user-select: none;
 }
 
 @keyframes fadeOut {
