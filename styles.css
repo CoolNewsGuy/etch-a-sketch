@@ -10,8 +10,8 @@
     --control-panel-grid-slider-height: 20px;
     --control-panel-grid-slider-width: 400px;
     --control-panel-grid-slider-color: #37495a;
-    --control-panel-grid-slider-circle-height: 37px;
-    --control-panel-grid-slider-circle-width: 37px;
+    --control-panel-grid-slider-circle-height: 30px;
+    --control-panel-grid-slider-circle-width: 30px;
     --control-panel-grid-text: 20px;
     --control-panel-circles-color: #0c1f3d;
     --big-container-height: 100vh;
@@ -109,6 +109,52 @@ body {
     font-size: var(--control-panel-subtitles-size);
     font-weight: 400;
     margin-left: 1rem;
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+}
+
+.menu-2 span {
+    font-size: 20px;
+}
+
+.menu-2 #grid-slider {
+    appearance: none;
+    display: block;
+    max-height: var(--control-panel-grid-slider-height);
+    width: var(--control-panel-grid-slider-width);
+    background: var(--control-panel-grid-slider-color);
+    border-radius: 10px;
+    margin: auto;
+    outline: none;
+    opacity: 0.5;
+    transition: 0.2s;
+}
+
+.menu-2 #grid-slider:hover {
+    opacity: 1;
+}
+
+.menu-2 #grid-slider::-webkit-slider-thumb {
+    appearance: none;
+    background: var(--control-panel-circles-color);
+    min-height: var(--control-panel-grid-slider-circle-height);
+    width: var(--control-panel-grid-slider-circle-width);
+    border-radius: 50%;
+}
+
+.menu-2 #grid-slider::-moz-range-thumb {
+    appearance: none;
+    background: var(--control-panel-circles-color);
+    min-height: var(--control-panel-grid-slider-circle-height);
+    width: var(--control-panel-grid-slider-circle-width);
+    border-radius: 50%;
+    border: none;
+}
+
+.menu-2 .current-grid-text {
+    display: block;
+    text-align: center;
+    margin-top: 0.4em;
 }
 
 .big-container {

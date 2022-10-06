@@ -3,14 +3,15 @@ let sketchContainer = document.getElementsByClassName("sketch-container")[0],
     gotItButton = document.getElementById("got-it-btn"),
     menu1 = document.getElementsByClassName("menu-1")[0],
     menu2 = document.getElementsByClassName("menu-2")[0],
-    grid = 64;
+    sliderValue = document.getElementById("grid-slider"),
+    gridValue = document.getElementsByClassName("current-grid-value")[0];
 
 // +functions
 function createLineContainers() {
-    for (let i = 0; i < grid; i++) {
+    for (let i = 0; i < +sliderValue.value; i++) {
         let lineContainer = document.createElement("div");
         lineContainer.style.maxHeight =
-            sketchContainer.clientHeight / grid + "px";
+            sketchContainer.clientHeight / +sliderValue.value + "px";
         lineContainer.style.width = getComputedStyle(sketchContainer).width;
         lineContainer.classList.add("line-container");
         sketchContainer.appendChild(lineContainer);
@@ -22,14 +23,16 @@ function createSquares() {
     square.classList.add("square");
     square.style.display = "inline-block";
     square.style.background = "#fee715";
-    square.style.width = sketchContainer.clientWidth / grid + "px";
-    square.style.height = sketchContainer.clientHeight / grid + "px";
+    square.style.width =
+        sketchContainer.clientWidth / +sliderValue.value + "px";
+    square.style.height =
+        sketchContainer.clientHeight / +sliderValue.value + "px";
 
     return square;
 }
 
 function drawSquares(container) {
-    for (let i = 0; i < grid; i++) {
+    for (let i = 0; i < +sliderValue.value; i++) {
         container.append(createSquares());
     }
 }
@@ -39,16 +42,20 @@ function colorizeSquares() {
 }
 
 function reset() {
-    squares.forEach((square) => square.classList.add("transparent-squares"));
+    squares.forEach((square) => {
+        square.classList.add("transparent-squares");
+    });
+    squares.forEach(
+        (square) => (square.style.background = `rgb(${red},${green},${blue})`)
+    );
 }
-
 function addShortcuts(e) {
     if (e.key === "1") {
         squares.forEach((square) =>
             square.addEventListener("mouseover", colorizeSquares)
         );
     } else if (e.key === "2") {
-        let red = Math.floor(Math.random() * 257),
+        var red = Math.floor(Math.random() * 257),
             green = Math.floor(Math.random() * 257),
             blue = Math.floor(Math.random() * 257);
 
@@ -77,9 +84,11 @@ function addShortcuts(e) {
             square.removeEventListener("mouseover", colorizeSquares)
         );
     } else if (e.key === "6") {
-        squares.forEach((square) =>
-            square.removeEventListener("mouseover", colorizeSquares)
-        );
+        squares.forEach((square) => {
+            square.removeEventListener("mouseover", colorizeSquares);
+            square.style.backgroundColor = "";
+        });
+
         reset();
     }
 }
@@ -88,6 +97,10 @@ function hideMenu1() {
     menu1.classList.add("fade-out");
     gotItButton.setAttribute("class", "clicked-btn");
     setInterval(() => (menu1.style.display = "none"), 1500);
+}
+
+function changeGridText() {
+    gridValue.textContent = `${sliderValue.value}x${sliderValue.value}`;
 }
 
 // +other things
@@ -101,3 +114,10 @@ squares.forEach((square) => square.classList.add("transparent-squares"));
 resetButton.addEventListener("click", reset);
 document.addEventListener("keypress", addShortcuts);
 gotItButton.addEventListener("click", hideMenu1);
+
+sliderValue.addEventListener("input", changeGridText);
+sliderValue.addEventListener("mouseup", () => {
+    reset();
+    createLineContainers();
+    console.log(+sliderValue.value);
+});
