@@ -1,9 +1,9 @@
-let sketchContainer = document.getElementsByClassName("sketch-container")[0];
-let resetButton = document.getElementById("reset-btn");
-let gotItButton = document.getElementById("got-it-btn");
-let menu1 = document.getElementsByClassName("menu-1")[0];
-let menu2 = document.getElementsByClassName("menu-2")[0];
-let grid = 100;
+let sketchContainer = document.getElementsByClassName("sketch-container")[0],
+    resetButton = document.getElementById("reset-btn"),
+    gotItButton = document.getElementById("got-it-btn"),
+    menu1 = document.getElementsByClassName("menu-1")[0],
+    menu2 = document.getElementsByClassName("menu-2")[0],
+    grid = 100;
 
 // +functions
 function createLineContainers() {
