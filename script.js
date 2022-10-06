@@ -3,7 +3,7 @@ let sketchContainer = document.getElementsByClassName("sketch-container")[0],
     gotItButton = document.getElementById("got-it-btn"),
     menu1 = document.getElementsByClassName("menu-1")[0],
     menu2 = document.getElementsByClassName("menu-2")[0],
-    grid = 100;
+    grid = 64;
 
 // +functions
 function createLineContainers() {
