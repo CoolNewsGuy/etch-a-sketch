@@ -49,7 +49,7 @@ body {
     color: var(--text-color);
 }
 
-.menu h1 {
+.menu-1 h1 {
     margin-left: 54px;
     margin-right: 73px;
     font-size: var(--how-to-play-title-size);
@@ -57,14 +57,14 @@ body {
     white-space: nowrap;
 }
 
-.menu p {
+.menu-1 p {
     font-size: var(--how-to-play-text-size);
     margin-top: 2.6em;
     line-height: 1.4;
     margin-left: 0.5em;
 }
 
-.menu button {
+.menu-1 button {
     font-size: var(--btn-text-size);
     width: var(--btn-width);
     min-height: var(--btn-height);
@@ -79,23 +79,23 @@ body {
     transition: all 0.3s;
 }
 
-.menu button:hover {
+.menu-1 button:hover {
     color: var(--btn-hover-text-color);
     background-color: var(--btn-text-color);
     cursor: pointer;
 }
 
-.clicked-btn#got-it-btn {
+.menu-1 .clicked-btn#got-it-btn {
     background-color: var(--btn-hover-text-color);
     color: var(--btn-text-color);
     cursor: default;
 }
 
-.menu #got-it-btn {
+.menu-1 #got-it-btn {
     margin-top: 70px;
 }
 
-.menu #reset-btn {
+.menu-1 #reset-btn {
     margin-top: 2.8em;
     display: none;
 }
