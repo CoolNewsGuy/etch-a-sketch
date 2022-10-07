@@ -6,6 +6,7 @@ let sketchContainer = document.getElementsByClassName("sketch-container")[0],
     menu2 = document.getElementsByClassName("menu-2")[0],
     sliderValue = document.getElementById("grid-slider"),
     gridValue = document.getElementsByClassName("current-grid-value")[0];
+gridValue.textContent = `${sliderValue.value}x${sliderValue.value}`;
 
 // +functions
 function createLineContainers() {
@@ -57,6 +58,7 @@ function addShortcuts(e) {
         green = Math.floor(Math.random() * 257),
         blue = Math.floor(Math.random() * 257),
         color = `rgb(${red},${green},${blue})`;
+
     if (e.key === "1") {
         squares.forEach((square) => {
             square.classList.add("transparent-squares");
