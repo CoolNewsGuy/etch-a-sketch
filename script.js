@@ -1,3 +1,4 @@
+"use strict";
 let sketchContainer = document.getElementsByClassName("sketch-container")[0],
     resetButton = document.getElementById("reset-btn"),
     gotItButton = document.getElementById("got-it-btn"),
@@ -16,6 +17,10 @@ function createLineContainers() {
         lineContainer.classList.add("line-container");
         sketchContainer.appendChild(lineContainer);
     }
+}
+
+function removeLineContainers() {
+    sketchContainer.innerHTML = "";
 }
 
 function createSquares() {
@@ -45,23 +50,22 @@ function reset() {
     squares.forEach((square) => {
         square.classList.add("transparent-squares");
     });
-    squares.forEach(
-        (square) => (square.style.background = `rgb(${red},${green},${blue})`)
-    );
 }
-function addShortcuts(e) {
-    if (e.key === "1") {
-        squares.forEach((square) =>
-            square.addEventListener("mouseover", colorizeSquares)
-        );
-    } else if (e.key === "2") {
-        var red = Math.floor(Math.random() * 257),
-            green = Math.floor(Math.random() * 257),
-            blue = Math.floor(Math.random() * 257);
 
+function addShortcuts(e) {
+    var red = Math.floor(Math.random() * 257),
+        green = Math.floor(Math.random() * 257),
+        blue = Math.floor(Math.random() * 257),
+        color = `rgb(${red},${green},${blue})`;
+    if (e.key === "1") {
+        squares.forEach((square) => {
+            square.classList.add("transparent-squares");
+            square.addEventListener("mouseover", colorizeSquares);
+        });
+    } else if (e.key === "2") {
         squares.forEach((square) => {
             if (square.classList.contains("transparent-squares"))
-                square.style.background = `rgb(${red},${green},${blue})`;
+                square.style.background = color;
         });
     } else if (e.key === "3") {
         let rgb = ["red", "green", "blue"];
@@ -86,9 +90,7 @@ function addShortcuts(e) {
     } else if (e.key === "6") {
         squares.forEach((square) => {
             square.removeEventListener("mouseover", colorizeSquares);
-            square.style.backgroundColor = "";
         });
-
         reset();
     }
 }
@@ -111,13 +113,16 @@ lineContainers.forEach(drawSquares);
 let squares = document.querySelectorAll(".square");
 squares.forEach((square) => square.classList.add("transparent-squares"));
 
-resetButton.addEventListener("click", reset);
 document.addEventListener("keypress", addShortcuts);
 gotItButton.addEventListener("click", hideMenu1);
 
 sliderValue.addEventListener("input", changeGridText);
 sliderValue.addEventListener("mouseup", () => {
     reset();
+    removeLineContainers();
     createLineContainers();
-    console.log(+sliderValue.value);
+    lineContainers = document.querySelectorAll(".line-container");
+    lineContainers.forEach(drawSquares);
+    squares = document.querySelectorAll(".square");
+    squares.forEach((square) => square.classList.add("transparent-squares"));
 });
