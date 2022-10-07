@@ -176,6 +176,7 @@ body {
     width: var(--control-panel-colors-rectangles-width);
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .menu-2 .enabled {

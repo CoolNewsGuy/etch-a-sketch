@@ -147,5 +147,8 @@ sliderValue.addEventListener("mouseup", () => {
     lineContainers = document.querySelectorAll(".line-container");
     lineContainers.forEach(drawSquares);
     squares = document.querySelectorAll(".square");
-    squares.forEach((square) => square.classList.add("transparent-squares"));
+    squares.forEach((square) => {
+        square.style.background = squareRectangle.value;
+        square.classList.add("transparent-squares");
+    });
 });
