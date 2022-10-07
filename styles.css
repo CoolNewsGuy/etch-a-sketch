@@ -14,6 +14,9 @@
     --control-panel-grid-slider-circle-width: 30px;
     --control-panel-grid-text: 20px;
     --control-panel-circles-color: #0c1f3d;
+    --control-panel-colors-rectangles-height: 43px;
+    --control-panel-colors-rectangles-width: 200px;
+    --control-panel-colors-background-color: #02042d;
     --big-container-height: 100vh;
     --big-container-width: calc(100vw - 432px);
     --how-to-play-title-size: 50px;
@@ -155,6 +158,26 @@ body {
     display: block;
     text-align: center;
     margin-top: 0.4em;
+}
+
+.menu-2 .background,
+.squares-color {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menu-2 .subtext {
+    font-size: var(--control-panel-subtexts-size);
+    width: 192px;
+}
+
+.menu-2 .background .background-color,
+.square-color {
+    background: var(--control-panel-colors-background-color);
+    min-height: var(--control-panel-colors-rectangles-height);
+    width: var(--control-panel-colors-rectangles-width);
+    border: none;
 }
 
 .big-container {
