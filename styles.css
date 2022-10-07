@@ -97,6 +97,10 @@ body {
     margin-top: 70px;
 }
 
+.menu-2 {
+    display: none;
+}
+
 .menu-2 h1 {
     text-align: center;
     font-size: var(--control-panel-title-size);
@@ -230,7 +234,7 @@ body {
 
 .fade-out {
     opacity: 0;
-    animation: fadeOut 2s;
+    animation: fadeOut 1.5s;
     user-select: none;
 }
 
@@ -245,7 +249,7 @@ body {
 
 .fade-in {
     opacity: 1;
-    animation: fadeIn 1s;
+    animation: fadeIn 1.5s;
 }
 
 @keyframes fadeIn {

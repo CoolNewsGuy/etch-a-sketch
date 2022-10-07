@@ -104,7 +104,13 @@ function addShortcuts(e) {
 function hideMenu1() {
     menu1.classList.add("fade-out");
     gotItButton.setAttribute("class", "clicked-btn");
-    setInterval(() => (menu1.style.display = "none"), 1500);
+    setTimeout(() => (menu1.style.display = "none"), 1500);
+    showMenu2();
+}
+
+function showMenu2() {
+    setTimeout(() => (menu2.style.display = "block"), 1500);
+    menu2.classList.add("fade-in");
 }
 
 function changeGridText() {
