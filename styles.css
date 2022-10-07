@@ -117,7 +117,8 @@ body {
 }
 
 .menu-2 span {
-    font-size: 20px;
+    font-size: 25px;
+    display: inline-block;
 }
 
 .menu-2 #grid-slider {
@@ -158,6 +159,7 @@ body {
     display: block;
     text-align: center;
     margin-top: 0.4em;
+    font-size: 20px;
 }
 
 .menu-2 .background,
@@ -178,6 +180,29 @@ body {
     min-height: var(--control-panel-colors-rectangles-height);
     width: var(--control-panel-colors-rectangles-width);
     border: none;
+}
+
+.menu-2 .enabled {
+    margin-right: 70px;
+}
+
+.menu-2 .enabled,
+.disabled {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.menu-2 .sketching .circle {
+    background: var(--control-panel-circles-color);
+    height: 37px;
+    width: 37px;
+    border-radius: 50%;
+    margin-left: 18px;
+}
+
+.menu-2 .sketching .disable-circle {
+    background: #fee715;
 }
 
 .big-container {
