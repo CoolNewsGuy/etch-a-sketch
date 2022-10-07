@@ -175,6 +175,7 @@ body {
     min-height: var(--control-panel-colors-rectangles-height);
     width: var(--control-panel-colors-rectangles-width);
     border: none;
+    outline: none;
 }
 
 .menu-2 .enabled {

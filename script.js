@@ -5,7 +5,10 @@ let sketchContainer = document.getElementsByClassName("sketch-container")[0],
     menu1 = document.getElementsByClassName("menu-1")[0],
     menu2 = document.getElementsByClassName("menu-2")[0],
     sliderValue = document.getElementById("grid-slider"),
-    gridValue = document.getElementsByClassName("current-grid-value")[0];
+    gridValue = document.getElementsByClassName("current-grid-value")[0],
+    backgroundRectangle = document.getElementById("background-color"),
+    squareRectangle = document.getElementById("square-color");
+
 gridValue.textContent = `${sliderValue.value}x${sliderValue.value}`;
 
 // +functions
@@ -102,6 +105,16 @@ function changeGridText() {
     gridValue.textContent = `${sliderValue.value}x${sliderValue.value}`;
 }
 
+function changeBackgroundColor() {
+    sketchContainer.style.background = backgroundRectangle.value;
+}
+
+function changeSquaresColor() {
+    squares.forEach(
+        (square) => (square.style.background = squareRectangle.value)
+    );
+}
+
 // +other things
 createLineContainers();
 let lineContainers = document.querySelectorAll(".line-container");
@@ -114,6 +127,8 @@ squares.forEach((square) => {
 
 document.addEventListener("keypress", addShortcuts);
 gotItButton.addEventListener("click", hideMenu1);
+backgroundRectangle.addEventListener("input", changeBackgroundColor);
+squareRectangle.addEventListener("input", changeSquaresColor);
 
 sliderValue.addEventListener("input", changeGridText);
 sliderValue.addEventListener("mouseup", () => {
