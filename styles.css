@@ -118,7 +118,7 @@ body {
 
 .menu-2 span {
     font-size: 25px;
-    display: inline-block;
+    display: block;
 }
 
 .menu-2 #grid-slider {
@@ -203,6 +203,11 @@ body {
 
 .menu-2 .sketching .disable-circle {
     background: #fee715;
+}
+
+.menu-2 .shortcuts .shortcuts-keys {
+    margin-left: 20px;
+    line-height: 1.6;
 }
 
 .big-container {
