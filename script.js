@@ -8,6 +8,14 @@ let sketchContainer = document.getElementsByClassName("sketch-container")[0],
     gridValue = document.getElementsByClassName("current-grid-value")[0],
     backgroundRectangle = document.getElementById("background-color"),
     squareRectangle = document.getElementById("square-color");
+const rgbToHex = (r, g, b) =>
+    "#" +
+    [r, g, b]
+        .map((x) => {
+            const hex = x.toString(16);
+            return hex.length === 1 ? "0" + hex : hex;
+        })
+        .join("");
 
 gridValue.textContent = `${sliderValue.value}x${sliderValue.value}`;
 
@@ -69,6 +77,7 @@ function addShortcuts(e) {
     } else if (e.key === "2") {
         squares.forEach((square) => {
             square.style.background = color;
+            squareRectangle.value = rgbToHex(red, green, blue);
         });
     } else if (e.key === "3") {
         let rgb = ["red", "green", "blue"];
