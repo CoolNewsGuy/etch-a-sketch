@@ -7,7 +7,10 @@ let sketchContainer = document.getElementsByClassName("sketch-container")[0],
     sliderValue = document.getElementById("grid-slider"),
     gridValue = document.getElementsByClassName("current-grid-value")[0],
     backgroundRectangle = document.getElementById("background-color"),
-    squareRectangle = document.getElementById("square-color");
+    squareRectangle = document.getElementById("square-color"),
+    enableCircle = document.getElementsByClassName("enable-circle")[0],
+    disableCircle = document.getElementsByClassName("disable-circle")[0];
+
 const rgbToHex = (r, g, b) =>
     "#" +
     [r, g, b]
@@ -71,9 +74,7 @@ function addShortcuts(e) {
         color = `rgb(${red},${green},${blue})`;
 
     if (e.key === "1") {
-        squares.forEach((square) => {
-            square.addEventListener("mouseover", colorizeSquares);
-        });
+        enableSketching();
     } else if (e.key === "2") {
         squares.forEach((square) => {
             square.style.background = color;
@@ -93,13 +94,9 @@ function addShortcuts(e) {
             square.style.background = `rgb(${red},${green},${blue})`;
         });
     } else if (e.key === "5") {
-        squares.forEach((square) =>
-            square.removeEventListener("mouseover", colorizeSquares)
-        );
+        disableSketching();
     } else if (e.key === "6") {
-        squares.forEach((square) => {
-            square.removeEventListener("mouseover", colorizeSquares);
-        });
+        disableSketching();
         reset();
     }
 }
@@ -124,6 +121,22 @@ function changeSquaresColor() {
     );
 }
 
+function enableSketching() {
+    squares.forEach((square) => {
+        square.addEventListener("mouseover", colorizeSquares);
+    });
+    enableCircle.style.background = "#fee715";
+    disableCircle.style.background = "#0c1f3d";
+}
+
+function disableSketching() {
+    squares.forEach((square) =>
+        square.removeEventListener("mouseover", colorizeSquares)
+    );
+    disableCircle.style.background = "#fee715";
+    enableCircle.style.background = "#0c1f3d";
+}
+
 // +other things
 createLineContainers();
 let lineContainers = document.querySelectorAll(".line-container");
@@ -136,9 +149,6 @@ squares.forEach((square) => {
 
 document.addEventListener("keypress", addShortcuts);
 gotItButton.addEventListener("click", hideMenu1);
-backgroundRectangle.addEventListener("input", changeBackgroundColor);
-squareRectangle.addEventListener("input", changeSquaresColor);
-
 sliderValue.addEventListener("input", changeGridText);
 sliderValue.addEventListener("mouseup", () => {
     reset();
@@ -151,4 +161,9 @@ sliderValue.addEventListener("mouseup", () => {
         square.style.background = squareRectangle.value;
         square.classList.add("transparent-squares");
     });
+    disableSketching();
 });
+backgroundRectangle.addEventListener("input", changeBackgroundColor);
+squareRectangle.addEventListener("input", changeSquaresColor);
+enableCircle.addEventListener("click", enableSketching);
+disableCircle.addEventListener("click", disableSketching);

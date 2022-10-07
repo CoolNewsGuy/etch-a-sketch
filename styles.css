@@ -188,6 +188,7 @@ body {
     display: inline-flex;
     gap: 5px;
     align-items: center;
+    user-select: none;
 }
 
 .menu-2 .sketching .circle {
@@ -196,6 +197,7 @@ body {
     width: 37px;
     border-radius: 50%;
     margin-left: 18px;
+    cursor: pointer;
 }
 
 .menu-2 .sketching .disable-circle {
