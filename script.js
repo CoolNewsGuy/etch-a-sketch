@@ -61,29 +61,24 @@ function addShortcuts(e) {
 
     if (e.key === "1") {
         squares.forEach((square) => {
-            square.classList.add("transparent-squares");
             square.addEventListener("mouseover", colorizeSquares);
         });
     } else if (e.key === "2") {
         squares.forEach((square) => {
-            if (square.classList.contains("transparent-squares"))
-                square.style.background = color;
+            square.style.background = color;
         });
     } else if (e.key === "3") {
         let rgb = ["red", "green", "blue"];
 
         squares.forEach((square) => {
-            if (square.classList.contains("transparent-squares"))
-                square.style.background = rgb[Math.floor(Math.random() * 3)];
+            square.style.background = rgb[Math.floor(Math.random() * 3)];
         });
     } else if (e.key === "4") {
         squares.forEach((square) => {
-            if (square.classList.contains("transparent-squares")) {
-                let red = Math.floor(Math.random() * 257),
-                    green = Math.floor(Math.random() * 257),
-                    blue = Math.floor(Math.random() * 257);
-                square.style.background = `rgb(${red},${green},${blue})`;
-            }
+            let red = Math.floor(Math.random() * 257),
+                green = Math.floor(Math.random() * 257),
+                blue = Math.floor(Math.random() * 257);
+            square.style.background = `rgb(${red},${green},${blue})`;
         });
     } else if (e.key === "5") {
         squares.forEach((square) =>
@@ -113,7 +108,9 @@ let lineContainers = document.querySelectorAll(".line-container");
 lineContainers.forEach(drawSquares);
 
 let squares = document.querySelectorAll(".square");
-squares.forEach((square) => square.classList.add("transparent-squares"));
+squares.forEach((square) => {
+    square.classList.add("transparent-squares");
+});
 
 document.addEventListener("keypress", addShortcuts);
 gotItButton.addEventListener("click", hideMenu1);
